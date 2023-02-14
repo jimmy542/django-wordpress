@@ -41,7 +41,7 @@ django document [see more ](https://www.djangoproject.com/):
 
 install custom_api plugin in your wordpress
 
-## wp-config.php for developmet enviroment
+## wp-config.php for developmet environment
 ```php
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 ```
