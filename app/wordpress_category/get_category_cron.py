@@ -64,7 +64,7 @@ class Get_Category:
                 print(res.status_code)
 class Get_Category_CronJob(CronJobBase, Get_Category):
     """
-    Run the job every 35 minutes
+    Run the job every 5 minutes
     """
 
     RUN_EVERY_MINS = 5
