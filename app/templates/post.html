@@ -1,0 +1,28 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+    <div>
+        <form action="import_data/" method="POST">
+            {% csrf_token %}
+                <button type="submit">Import Data</button>
+        </form>
+        <form action="send_data/" method="POST">
+            {% csrf_token %}
+                <button type="submit">Send Data to Web</button>
+        </form>
+         <form action="update_data/" method="POST">
+            {% csrf_token %}
+                <button type="submit">Update Data to Web</button>
+        </form>
+        <form action="get_data/" method="POST">
+            {% csrf_token %}
+                <button type="submit">Get Data From Original Web</button>
+        </form>
+        <form action="reset_sync/" method="POST">
+            {% csrf_token %}
+                <button type="submit">reset sync</button>
+        </form>
+    </div>
+    <br />
+    {{ block.super }}
+{% endblock %}

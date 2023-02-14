@@ -1,0 +1,20 @@
+
+
+python manage.py migrate
+python manage.py createsuperuser
+winpty python manage.py createsuperuser
+
+winpty docker-compose exec web python manage.py createsuperuser
+python manage.py makemigrations
+python manage.py migrate --run-syncdb
+winpty docker-compose exec web python manage.py migrate --run-syncdb
+python manage.py makemigrations wordpress
+python manage.py startapp wordpress_category
+docker-compose exec web python manage.py makemigrations django_cron
+sudo docker-compose exec web python manage.py migrate django_cron
+sudo docker-compose exec web python manage.py runcrons --silent
+pip install django-tags-input
+pip install django-taggit
+pip install django-taggit-autosuggest
+pip install django_cron
+pip install django-tagulous
