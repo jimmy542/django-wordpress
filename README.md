@@ -52,7 +52,7 @@ application password [see more ](https://www.paidmembershipspro.com/create-appli
 
 
 ## connect django to wordpress
-fill your credentials in wordpress section in django admin
+fill your credentials  wordpress section in django admin
     - website name
     - url
     - username
