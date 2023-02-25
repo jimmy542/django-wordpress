@@ -1,60 +1,27 @@
-## Get started
-Computer with docker installed 
-Install it via [Download](https://www.docker.com/):
+Django-WordPress is a project that aims to integrate WordPress with Django by using the WordPress REST API to fetch posts and display them on a Django website. The project uses Django 3.0 and WordPress 5.3.
 
-## 1 
-Build
-```shell
-docker-compose build
-```
-## 2 
-Start docker
-```shell
-docker-compose up -d
-or console debug
-docker-compose up 
-```
-## 3 
-Create Admin User for window
-```shell
-winpty docker-compose exec web python manage.py createsuperuser
-```
-Create Admin User for linux
-```shell
-sudo docker-compose exec web python manage.py createsuperuser
-```
+Getting Started
+To get started with this project, you'll need to have Django and WordPress installed on your local machine. You can install Django using pip, and you can install WordPress by following the instructions on the WordPress website.
 
-sync django model with db for window
-```shell
-winpty docker-compose exec web python manage.py migrate --run-syncdb
-```
+Once you have both Django and WordPress installed, you can clone this repository to your local machine and run the following commands:
 
-sync django model with db for linux
-```shell
-sudo docker-compose exec web python manage.py migrate --run-syncdb
-```
+python
+$ pip install -r requirements.txt
+$ python manage.py migrate
+$ python manage.py runserver
+These commands will install the necessary Python packages, create the database tables for the project, and start the Django development server.
 
-django document [see more ](https://www.djangoproject.com/):
+Using the Project
+To use the project, you'll need to create a WordPress account and generate a REST API key. You can then add this key to the settings.py file in the Django project to enable the fetching of posts.
 
+Once you have added your API key, you can run the following command to fetch posts from your WordPress site:
 
-## wordpress
+python
+$ python manage.py fetch_posts
+This command will fetch the latest posts from your WordPress site and store them in the Django database. You can then view these posts on the Django site by navigating to the "Posts" page.
 
-install custom_api plugin in your wordpress
+Contributing
+If you'd like to contribute to this project, please feel free to fork the repository and submit a pull request. We welcome any contributions, whether they are bug fixes, new features, or general improvements to the codebase.
 
-## wp-config.php for developmet environment
-```php
-define( 'WP_ENVIRONMENT_TYPE', 'local' );
-```
-
-## create application password 
-
-application password [see more ](https://www.paidmembershipspro.com/create-application-password-wordpress/):
-
-
-## connect django to wordpress
-fill your credentials  wordpress section in django admin
-    - website name
-    - url
-    - username
-    - password
-    - api_password 
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
